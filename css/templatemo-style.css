@@ -87,7 +87,7 @@ p {
 }
 
 .tm-content {  
-  padding: 55px;
+  padding-top: 55px;
 }
 
 .tm-header {
@@ -397,6 +397,55 @@ figcaption {
 /*------------------*/
 /*Personal additions*/
 /*------------------*/
-.text-subtitle {
+.text-header2 {
 	text-align: center;
+	margin-bottom: 50px;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: normal;
+}
+
+.list-wrap ul li {
+	display: inline-grid;
+	background: #999A9B;
+	margin-bottom: 70px;
+	padding: 15px 30px;
+	color: #fff;
+	width: 500px;
+	font-size: 14px;
+	line-height: 22px;
+	position: relative;
+}
+
+.list-wrap ul li:last-child {
+	margin-bottom: 0;
+}
+/*
+.list-wrap ul li .icon:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: #9e5406;
+}
+*/
+
+.list-wrap ul li .icon {
+	position: relative;
+	top: -25px;
+	left: -25px;
+	width: 125px;
+	height: 125px;
+	background: #7b5be4;
+	border-radius: 50%;
+	z-index: 1;
+}
+
+.list-wrap ul li.items .icon:before {
+	width: 75px;
+	height: 73px;
 }
