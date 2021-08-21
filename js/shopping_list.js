@@ -1,7 +1,4 @@
-// const domain = 'https://www.amazon.com.au/ACER-Nitro-N50-610-Acer-Desktop/dp/B08RWWY4QN/ref=sr_1_4?_encoding=UTF8&c=ts&dchild=1&keywords=Desktop+PCs&qid=1629518647&s=computers&sr=1-4&ts_id=4913308051';
-
-
-// get_product_details(domain);
+get_product_details(domain);
 
 function get_product_details(domain){
 
@@ -40,10 +37,10 @@ axios(url)
     }
   }
 
-  // console.log(product_name)
-  // console.log(product_price)
-  // console.log(product_image)
-  // console.log(product_description)
+  console.log(product_name)
+  console.log(product_price)
+  console.log(product_image)
+  console.log(product_description)
 
   data = JSON.stringify({name: product_name, image: product_image, price: product_price, description: product_description})
 
