@@ -48,7 +48,7 @@ https://templatemo.com/tm-533-verticard
               <div class="text-center">
                   <label for="product_url">Add product URL: </label>
                   <input autofocus="" type="url" id="product_url" name="product_url" />
-                  <button onclick="get_product_name(document.getElementById(product_url))" id="add">Add</button>
+                  <button onclick="get_product_details(document.getElementById(product_url))" id="add">Add</button>
               </div>
               <br />
               <br />
@@ -68,41 +68,58 @@ https://templatemo.com/tm-533-verticard
     </footer>
 
       <script>
-          no_images = 0;
+          list_item_no = 0
           /*--- Function to construct new list element in the shopping cart ---*/
           document.getElementById("add").onclick = function () {
               var node = document.createElement("li");
               node.classList.add("items");
+
               var div1 = document.createElement("div");
               div1.classList.add("list");
+
               var form = document.createElement("form");
               form.action = "comparison.html";
+
               var div2 = document.createElement("div");
               div2.classList.add("icon");
+
               var img = document.createElement("img");
-              img.classList.add("icon");
-              img.id = no_images + 1;
-              no_images += 1;
-              img.src = "img/gallery/gallery-img-01.jpg";
+              img.id = "img_" + (list_item_no + 1);
               div2.appendChild(img);
               form.appendChild(div2);
+
               var div3 = document.createElement("div");
+              var div3text = document.createTextNode("");
+              div3.appendChild(div3text);
               div3.classList.add("content");
-              var text = document.getElementById("product_url").value;
-              var textNode = document.createTextNode(text);
-              div3.appendChild(textNode);
+              div3.id = "name_" + (list_item_no + 1);
               form.appendChild(div3);
+
+              var div4 = document.createElement("div");
+              var div4text = document.createTextNode("");
+              div4.appendChild(div4text);
+              div4.classList.add("content");
+              div4.id = "price_" + (list_item_no + 1);
+              form.appendChild(div4);
+
+              var div5 = document.createElement("div");
+              var div5text = document.createTextNode("");
+              div5.appendChild(div5text);
+              div5.classList.add("content");
+              div5.id = "description_" + (list_item_no + 1);
+              form.appendChild(div5);
+
               var button = document.createElement("button");
               button.type = "submit";
               button.textContent = "Compare";
+
               form.appendChild(button);
               div1.appendChild(form);
               node.appendChild(div1);
               document.getElementById("shopping_list").appendChild(node);
+
+              list_item_no += 1;
           }
-      </script>
-      <script>
-          
       </script>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
