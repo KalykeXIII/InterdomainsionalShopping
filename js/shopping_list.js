@@ -51,6 +51,10 @@ axios(url)
   console.log(product_price)
   console.log(product_image)
   console.log(product_description)
+
+  data = JSON.stringify({name: product_name, image: product_image, price: product_price, description: product_description})
+
+  console.log(data)
 })
 .catch(console.error)
 };
