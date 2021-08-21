@@ -1,11 +1,22 @@
+// require(['axios', 'cheerio'], function( $ ) {
+//   console.log( $ ) // OK
+// });
 const axios = require('axios');
 const cheerio = require('cheerio');
-const domain = 'https://www.amazon.com.au/ASUS-Overclocked-Dual-Fan-DisplayPort-DUAL-RTX2060-O6G-EVO/dp/B07R18TH1X/ref=asc_df_B07R18TH1X?tag=bingshopdesk-22&linkCode=df0&hvadid=80470580721679&hvnetw=s&hvqmt=e&hvbmt=be&hvdev=c&hvlocint=&hvlocphy=&hvtargid=pla-4584070147375759&psc=1';
 
-get_product_name(domain);
-get_product_price(domain);
 
-function get_product_name(domain){
+const domain = 'https://www.amazon.com.au/ACER-Nitro-N50-610-Acer-Desktop/dp/B08RWWY4QN/ref=sr_1_4?_encoding=UTF8&c=ts&dchild=1&keywords=Desktop+PCs&qid=1629518647&s=computers&sr=1-4&ts_id=4913308051';
+
+
+get_product_details(domain);
+
+function get_product_details(domain){
+
+var product_name;
+var product_price;
+var product_image;
+var product_description = '';
+
 const url=domain;
 axios(url)
 .then(response => {
@@ -15,22 +26,31 @@ axios(url)
   var all_headers = page_content.split('\n');
   for (let i=0; i<all_headers.length ; i++){
       if (all_headers[i] != ''){
-        console.log(all_headers[i]);
-        return false
+        product_name = all_headers[i]
+        break
       }
   }
+  price_raw = $('#priceblock_ourprice').text();
+  if (price_raw.match('\d') != ''){
+    product_price = price_raw
+  }
+  else {
+    product_price = 'Unknown'
+  }
+
+  product_image = $("#imgTagWrapperId").find('img').eq(0).attr('src');
+
+  description_raw = $("#feature-bullets").text().split('\n')
+  for (let i = 0; i < description_raw.length; i ++){
+    if (description_raw[i] != ''){
+      product_description += description_raw[i] + '\n'
+    }
+  }
+
+  console.log(product_name)
+  console.log(product_price)
+  console.log(product_image)
+  console.log(product_description)
 })
 .catch(console.error)
 };
-
-function get_product_price(domain){
-    const url=domain;
-    axios(url)
-    .then(response => {
-      const html = response.data;
-      const $ = cheerio.load(html)
-      const page_content = $('#priceblock_ourprice').text();
-      console.log(page_content)
-    })
-    .catch(console.error)
-    };
