@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/templatemo-style.css" />
+
+    <script src="js/shopping_list.js" type="text/javascript"></script>
 <!--
 Verticard Template
 https://templatemo.com/tm-533-verticard
@@ -43,63 +45,30 @@ https://templatemo.com/tm-533-verticard
       <div class="tm-content-container">
           <div class="tm-content">
               <h2 class="text-header2">Shopping List</h2>
+              <div class="text-center">
+                  <label for="product_url">Add product URL: </label>
+                  <input autofocus="" type="url" id="product_url" name="product_url" />
+                  <button onclick="get_product_name(document.getElementById(product_url))">Add</button>
+              </div>
+              <br />
+              <br />
               <div class="wrapper">
                   <div class="list-wrap">
                       <ul>
                           <li class="items">
                               <div class="list">
-                                  <div class="icon"></div>
-                                  <div class="content">
-                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque beatae tempora nesciunt.
-                                  </div>
-                              </div>
-                          </li>
-                          <li>
-                              <div class="list">
-                                  <div class="icon"></div>
-                                  <div class="content">
-                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque beatae tempora nesciunt.
-                                  </div>
-                              </div>
-                          </li>
-                          <li>
-                              <div class="list">
-                                  <div class="icon"></div>
-                                  <div class="content">
-                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque beatae tempora nesciunt.
-                                  </div>
-                              </div>
-                          </li>
-                          <li>
-                              <div class="list">
-                                  <div class="icon"></div>
-                                  <div class="content">
-                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque beatae tempora nesciunt.
-                                  </div>
-                              </div>
-                          </li>
-                          <li>
-                              <div class="list">
-                                  <div class="icon"></div>
-                                  <div class="content">
-                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque beatae tempora nesciunt.
-                                  </div>
-                              </div>
-                          </li>
-                          <li>
-                              <div class="list">
-                                  <div class="icon"></div>
-                                  <div class="content">
-                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque beatae tempora nesciunt.
-                                  </div>
-                              </div>
-                          </li>
-                          <li>
-                              <div class="list">
-                                  <div class="icon"></div>
-                                  <div class="content">
-                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque beatae tempora nesciunt.
-                                  </div>
+                                  <form action="comparison.html">
+                                      <div class="icon">
+                                          <img id="1"/>
+                                      </div>
+                                      <div class="content">
+                                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque beatae tempora nesciunt.
+                                      </div>
+                                      <script>
+                                          localStorage.setItem("icon", getElementById("1"));
+                                      </script>
+                                      <button type="submit">Compare</button>
+                                  </form>
                               </div>
                           </li>
                       </ul>

@@ -1,4 +1,4 @@
-const axios=require('axios');
+const axios = require('axios');
 const cheerio = require('cheerio');
 const domain = 'https://www.amazon.com.au/ASUS-Overclocked-Dual-Fan-DisplayPort-DUAL-RTX2060-O6G-EVO/dp/B07R18TH1X/ref=asc_df_B07R18TH1X?tag=bingshopdesk-22&linkCode=df0&hvadid=80470580721679&hvnetw=s&hvqmt=e&hvbmt=be&hvdev=c&hvlocint=&hvlocphy=&hvtargid=pla-4584070147375759&psc=1';
 
