@@ -48,24 +48,26 @@ https://templatemo.com/tm-533-verticard
               <div class="text-center">
                   <label for="product_url">Add product URL: </label>
                   <input autofocus="" type="url" id="product_url" name="product_url" />
-                  <button onclick="get_product_name(document.getElementById(product_url))">Add</button>
+                  <button onclick="get_product_name(document.getElementById(product_url))" id="add">Add</button>
               </div>
               <br />
               <br />
               <div class="wrapper">
                   <div class="list-wrap">
-                      <ul>
+                      <ul id="shopping_list">
                           <li class="items">
                               <div class="list">
                                   <form action="comparison.html">
                                       <div class="icon">
-                                          <img id="1"/>
+                                          <img class="icon" id="1" src="img/gallery/gallery-img-01.jpg"/>
                                       </div>
                                       <div class="content">
                                           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque beatae tempora nesciunt.
                                       </div>
                                       <script>
-                                          localStorage.setItem("icon", getElementById("1"));
+                                          currentIcon = document.getElementById("1");
+                                          currentIcon = currentIcon.src.replace("file:///C:/Users/Panth/source/repos/InterdomainsionalShopping/", "");
+                                          localStorage.setItem("icon", currentIcon);
                                       </script>
                                       <button type="submit">Compare</button>
                                   </form>
@@ -82,6 +84,21 @@ https://templatemo.com/tm-533-verticard
       <span>Copyright 2019 Simple Profile</span>
       <span>designed by TemplateMo</span>
     </footer>
+
+      <script>
+          document.getElementById("add").onclick = function () {
+              var node = document.createElement("li");
+              var text = document.getElementById("product_url").value;
+              var textNode = document.createTextNode(text);
+              node.className = "items";
+              node.appendChild(document.createElement("div"));
+              var form = document.createElement("form");
+              form.action = "comparison.html";
+              node.appendChild(form);
+              node.appendChild(textNode);
+              document.getElementById("shopping_list").appendChild(node);
+          }
+      </script>
   </div>
 </body>
 

@@ -22,83 +22,86 @@ Template re-distribution is NOT allowed on any kind of download website. Thank y
 </head>
 
 <body>
-  <div class="tm-page-container mx-auto">
-      <header class="tm-header text-center">
-          <h1 class="tm-title text-uppercase">InterDomainsional Shopping</h1>
-          <p class="tm-small text-center">Comparison</p>
-      </header>
+    <div class="tm-page-container mx-auto">
+        <header class="tm-header text-center">
+            <h1 class="tm-title text-uppercase">InterDomainsional Shopping</h1>
+            <p class="tm-small text-center">Comparison</p>
+        </header>
 
-    <div class="tm-section">
-      <nav class="tm-nav">
-          <ul>
-              <li>
-                  <a href="index.html"><span class="tm-nav-deco"></span>Home</a>
-              </li>
-              <li>
-                  <a href="shoppinglist.html"><span class="tm-nav-deco"></span>Shopping List</a>
-              </li>
-              <li class="active">
-                  <a href="comparison.html"><span class="tm-nav-deco"></span>Item Comparison</a>
-              </li>
-              <li>
-                  <a href="checkout.html"><span class="tm-nav-deco"></span>Checkout</a>
-              </li>
-          </ul>
-      </nav>
-      <div class="tm-content-container">
-        <div class="tm-content tm-content-2">
-          <p>
-            This gallery contains a beautiful hover effect and pop-up larger
-            images. Please mention TemplateMo site to your friends.
-          </p>
+        <div class="tm-section">
+            <nav class="tm-nav">
+                <ul>
+                    <li>
+                        <a href="index.html"><span class="tm-nav-deco"></span>Home</a>
+                    </li>
+                    <li>
+                        <a href="shoppinglist.html"><span class="tm-nav-deco"></span>Shopping List</a>
+                    </li>
+                    <li class="active">
+                        <a href="comparison.html"><span class="tm-nav-deco"></span>Item Comparison</a>
+                    </li>
+                    <li>
+                        <a href="checkout.html"><span class="tm-nav-deco"></span>Checkout</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="tm-content-container">
+                <div class="tm-content tm-content-2">
+                    <p>
+                        This gallery contains a beautiful hover effect and pop-up larger
+                        images. Please mention TemplateMo site to your friends.
+                    </p>
 
-          <div class="container-fluid">
-            <div class="row tm-gallery" id="tmGallery">
-                <div class="col-sm-6 tm-gallery-item">
-                    <img src="img/gallery/gallery-img-05.jpg" alt="Gallery item" class="img-fluid" />
-                </div>
-                <div class="col-sm-6 tm-gallery-item">
-                    <img src="img/gallery/gallery-img-05.jpg" alt="Gallery item" class="img-fluid" />
-                </div>
-                <div class="col-sm-6 tm-gallery-item">
-                    <img src="img/gallery/gallery-img-05.jpg" alt="Gallery item" class="img-fluid" />
-                </div>
-                <div class="col-sm-6 tm-gallery-item">
-                    <img src="img/gallery/gallery-img-05.jpg" alt="Gallery item" class="img-fluid" />
-                </div>
-                <div class="col-sm-6 tm-gallery-item">
-                    <img src="img/gallery/gallery-img-05.jpg" alt="Gallery item" class="img-fluid" />
-                </div>
-                <div class="col-sm-6 tm-gallery-item">
-                    <img src="img/gallery/gallery-img-05.jpg" alt="Gallery item" class="img-fluid" />
+                    <div class="container-fluid">
+                        <div class="row tm-gallery" id="tmGallery">
+                            <div class="col-sm-6 tm-gallery-item">
+                                <img id="icon1" src="" alt="Gallery item" class="img-fluid" />
+                            </div>
+                            <div class="col-sm-6 tm-gallery-item">
+                                <img src="img/gallery/gallery-img-05.jpg" alt="Gallery item" class="img-fluid" />
+                            </div>
+                            <div class="col-sm-6 tm-gallery-item">
+                                <img src="img/gallery/gallery-img-05.jpg" alt="Gallery item" class="img-fluid" />
+                            </div>
+                            <div class="col-sm-6 tm-gallery-item">
+                                <img src="img/gallery/gallery-img-05.jpg" alt="Gallery item" class="img-fluid" />
+                            </div>
+                            <div class="col-sm-6 tm-gallery-item">
+                                <img src="img/gallery/gallery-img-05.jpg" alt="Gallery item" class="img-fluid" />
+                            </div>
+                            <div class="col-sm-6 tm-gallery-item">
+                                <img src="img/gallery/gallery-img-05.jpg" alt="Gallery item" class="img-fluid" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-          </div>
         </div>
-      </div>
+
+        <footer>
+            <span>Copyright 2019 Simple Profile</span>
+            <span>designed by TemplateMo</span>
+        </footer>
     </div>
-
-    <footer>
-      <span>Copyright 2019 Simple Profile</span>
-      <span>designed by TemplateMo</span>
-    </footer>
-  </div>
-
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      // Magnific Pop up
-      // https://dimsemenov.com/plugins/magnific-popup/
-      $('.tm-gallery').magnificPopup({
-        delegate: 'a', // child items selector, by clicking on it popup will open
-        type: 'image',
-        gallery: {
-          enabled: true
-        },
-      });
-    });
-  </script>
+    <script>
+        console.log(document.getElementById("icon1"))
+        document.getElementById("icon1").src = localStorage.getItem("icon");
+    </script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Magnific Pop up
+            // https://dimsemenov.com/plugins/magnific-popup/
+            $('.tm-gallery').magnificPopup({
+                delegate: 'a', // child items selector, by clicking on it popup will open
+                type: 'image',
+                gallery: {
+                    enabled: true
+                },
+            });
+        });
+    </script>
 
 </body>
 </html>
