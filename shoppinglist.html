@@ -70,6 +70,8 @@ https://templatemo.com/tm-533-verticard
         <script>
             list_item_no = 0
             /*--- Function to construct new list element in the shopping cart ---*/
+            info = get_product_data(document.getElementById("product_url").value)
+
             document.getElementById("add").onclick = function () {
                 var node = document.createElement("li");
                 node.classList.add("items");
