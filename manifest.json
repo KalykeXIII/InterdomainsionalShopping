@@ -11,7 +11,7 @@
     "activeTab"
   ],
   "icons": {
-  "48": "assets/img/ninja.png"
+  "48": "assets/img/ninja_icon.png"
   },
   "background": {
     "scripts": [
@@ -22,7 +22,7 @@
   },
   "browser_action": {
     "default_popup": "popup.html",
-    "default_image": "assets/img/ninja.png",
+    "default_image": "assets/img/ninja_icon.png",
     "default_script": "popup.js"
   }
 }

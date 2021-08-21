@@ -1,106 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-
    <link rel="stylesheet" href="assets/css/popup.css">
    <title>Sabre: Price Saver</title>
 </head>
 
+<!--Global background colour-->
 <body>
-
+    <!--Gives a gloabal padding of 5px-->
     <div id="cg-wrapper">
-
+        <!--Relative position, font-size, img margins and size-->
         <div id="cg-header">
-            <img src="./assets/img/ninja.png">
+            <img src="./assets/img/ninja_icon.png">
             <h1>Sabre: Price Saver!</h1>
         </div>
-
+        <!--No styles-->
         <div id="cg-containers">
             <p>Why hello! My name is Sabre and I'm here to help you shop to the top!</p>
         </div>
-        <div class="text-center">
-            <button id="add">Add</button>
-        </div>
+        <!--Creates a container spanning the width of the popup-->
         <div class="tm-page-container mx-auto">
+            <!--Bottom margin of 20px-->
             <section class="tm-section">
+                    <!--Top padding of 20px-->
                     <div class="tm-content">
                         <div class="wrapper">
                             <div class="list-wrap">
                                 <ul id="shopping_list">
+                                    <!--INSERT JS CONTENT HERE-->
                                 </ul>
                             </div>
                         </div>
                     </div>
             </section>
-            <script>
-                list_item_no = 0
-                /*--- Function to construct new list element in the shopping cart ---*/
-                // document.getElementById("add").onclick = function () {
-                //     var node = document.createElement("li");
-                //     node.classList.add("items");
-    
-                //     var div1 = document.createElement("div");
-                //     div1.classList.add("list");
-    
-                //     var form = document.createElement("form");
-                //     form.action = "comparison.html";
-    
-                //     var div2 = document.createElement("div");
-                //     div2.classList.add("icon");
-    
-                //     var img = document.createElement("img");
-                //     img.classList.add("image-wrap");
-                //     img.id = "img_" + (list_item_no + 1);
-                //     img.src = "img/gallery/gallery-img-0" + (list_item_no + 1) + ".jpg";
-                //     div2.appendChild(img);
-                //     form.appendChild(div2);
-    
-                //     var div3 = document.createElement("div");
-                //     var div3text = document.createTextNode("");
-                //     div3.appendChild(div3text);
-                //     div3.classList.add("content");
-                //     div3.id = "name_" + (list_item_no + 1);
-                //     form.appendChild(div3);
-    
-                //     var div4 = document.createElement("div");
-                //     var div4text = document.createTextNode("");
-                //     div4.appendChild(div4text);
-                //     div4.classList.add("content");
-                //     div4.id = "price_" + (list_item_no + 1);
-                //     form.appendChild(div4);
-    
-                //     var div5 = document.createElement("div");
-                //     var div5text = document.createTextNode("");
-                //     div5.appendChild(div5text);
-                //     div5.classList.add("content");
-                //     div5.id = "description_" + (list_item_no + 1);
-                //     form.appendChild(div5);
-    
-                //     var button = document.createElement("button");
-                //     button.type = "submit";
-                //     button.onclick = function () { sendToCompare(document.getElementById("img_" + (list_item_no + 1)), "name", "price", "description") };
-                //     button.textContent = "Compare";
-    
-                //     form.appendChild(button);
-                //     div1.appendChild(form);
-                //     node.appendChild(div1);
-                //     document.getElementById("shopping_list").appendChild(node);
-    
-                //     list_item_no += 1;
-                // }
-            </script>
-            <script>
-                function sendToCompare(img, name, price, description) {
-                    localStorage.setItem("image", "img/gallery/gallery-img-01");
-                    localStorage.setItem("name", name);
-                    localStorage.setItem("price", price);
-                    localStorage.setItem("description", description);
-                }
-            </script>
         </div>
-
-
+        <!--Inline with padding-->
+        <div class=cg-buttons>
+            <!--2 run of the mill buttons with hover changes-->
+            <button id="compare" class='button'>Compare</button>
+            <button id="checkout" class='button'>Checkout</button>
+            <!--Primary button also with hover-->
+            <button id="add" class='button primary'>Add</button>
+        </div>
     <script src="/assets/js/popup.js"></script>
 </body>
-
 </html>
