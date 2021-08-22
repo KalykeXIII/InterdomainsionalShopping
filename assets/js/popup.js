@@ -119,12 +119,5 @@ for (let i = 0; i < shopping_list.length; i++){
     div1.appendChild(form);
     node.appendChild(div1);
     document.getElementById("shopping_list").appendChild(node);
-}
+    }
 };
-
-// function sendToCompare(img, name, price, description) {
-//     localStorage.setItem("image", "img/gallery/gallery-img-01");
-//     localStorage.setItem("name", name);
-//     localStorage.setItem("price", price);
-//     localStorage.setItem("description", description);
-// }
