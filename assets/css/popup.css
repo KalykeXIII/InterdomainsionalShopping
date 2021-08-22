@@ -1,5 +1,5 @@
 body {
-    width: 500px;
+    width: 275px;
     color: #656667;
 }
 
@@ -568,9 +568,9 @@ figcaption {
 	display: inline-grid;
 	background: #999A9B;
 	margin-bottom: 70px;
-	padding: 15px 30px;
+	padding: 15px 30px 15px 30px;
 	color: #fff;
-	width: 500px;
+	width: 250px;
 	font-size: 14px;
 	line-height: 22px;
 	position: relative;
