@@ -19,6 +19,8 @@ chrome.runtime.onMessage.addListener( function (request) {
             shopping_list.push(new_product)
             // Reset the new product placeholder
             new_product = null
+            // Construct the list
+            construct_shopping_list();
             // Shopping list saved
             save_options();
             }
@@ -84,38 +86,36 @@ for (let i = 0; i < shopping_list.length; i++){
 
     var img = document.createElement("img");
     img.classList.add("image-wrap");
-    img.id = "img_" + (list_item_no + 1);
-    img.src = "img/gallery/gallery-img-0" + (list_item_no + 1) + ".jpg";
+    img.id = "img_" + String(i + 1);
+    img.src = shopping_list[i][2];
     div2.appendChild(img);
     form.appendChild(div2);
 
     var div3 = document.createElement("div");
-    var div3text = document.createTextNode("");
+    var div3text = document.createTextNode(shopping_list[i][0]);
     div3.appendChild(div3text);
     div3.classList.add("content");
-    div3.id = "name_" + (list_item_no + 1);
+    div3.id = "name_" + String(i + 1);
     form.appendChild(div3);
 
     var div4 = document.createElement("div");
-    var div4text = document.createTextNode("");
+    var div4text = document.createTextNode(shopping_list[i][1]);
     div4.appendChild(div4text);
     div4.classList.add("content");
-    div4.id = "price_" + (list_item_no + 1);
+    div4.id = "price_" + String(i + 1);
     form.appendChild(div4);
 
     var div5 = document.createElement("div");
-    var div5text = document.createTextNode("");
+    var div5text = document.createTextNode(shopping_list[i][3]);
     div5.appendChild(div5text);
     div5.classList.add("content");
-    div5.id = "description_" + (list_item_no + 1);
+    div5.id = "description_" + String(i + 1);
     form.appendChild(div5);
 
-    var button = document.createElement("button");
-    button.type = "submit";
-    button.onclick = function () { sendToCompare(document.getElementById("img_" + (list_item_no + 1)), "name", "price", "description") };
-    button.textContent = "Compare";
-
-    form.appendChild(button);
+    // var button = document.createElement("button");
+    // button.type = "submit";
+    // button.onclick = function () { sendToCompare(document.getElementById("img_" + (list_item_no + 1)), "name", "price", "description") };
+    // button.textContent = "Compare";
     div1.appendChild(form);
     node.appendChild(div1);
     document.getElementById("shopping_list").appendChild(node);
